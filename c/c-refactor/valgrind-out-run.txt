@@ -1,0 +1,131 @@
+==42404== Memcheck, a memory error detector
+==42404== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==42404== Using Valgrind-3.20.0-5147d671e4-20221024 and LibVEX; rerun with -h for copyright info
+==42404== Command: ./fft FFT 128
+==42404== Parent PID: 42403
+==42404== 
+--42404-- 
+--42404-- Valgrind options:
+--42404--    --leak-check=full
+--42404--    --show-leak-kinds=all
+--42404--    --track-origins=yes
+--42404--    --verbose
+--42404--    --log-file=valgrind-out-run.txt
+--42404-- Contents of /proc/version:
+--42404--   Linux version 6.0.9-300.fc37.x86_64 (mockbuild@bkernel01.iad2.fedoraproject.org) (gcc (GCC) 12.2.1 20220819 (Red Hat 12.2.1-2), GNU ld version 2.38-24.fc37) #1 SMP PREEMPT_DYNAMIC Wed Nov 16 17:36:22 UTC 2022
+--42404-- 
+--42404-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed
+--42404-- Page sizes: currently 4096, max supported 4096
+--42404-- Valgrind library directory: /usr/libexec/valgrind
+--42404-- Reading syms from /home/slimbook/Documents/fft/c/c-refactor/fft
+--42404-- Reading syms from /usr/lib64/ld-linux-x86-64.so.2
+--42404-- Warning: cross-CU LIMITATION: some inlined fn names
+--42404-- might be shown as UnknownInlinedFun
+--42404-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+==42404== Downloading debug info for /usr/libexec/valgrind/memcheck-amd64-linux...
+--42404--   Considering /home/slimbook/.cache/debuginfod_client/e28b34cda5d75be8381557b633068f1b973e0685/debuginfo ..
+--42404--   .. CRC is valid
+==42404== Successfully downloaded debug file for /usr/libexec/valgrind/memcheck-amd64-linux
+==42404== Downloading debug info for /home/slimbook/.cache/debuginfod_client/e28b34cda5d75be8381557b633068f1b973e0685/debuginfo...
+--42404--   Considering /home/slimbook/.cache/debuginfod_client/b1481f66a9bf3f00b839ade114af20b86c1c7470/debuginfo ..
+--42404--   .. build-id is valid
+==42404== Successfully downloaded debug file for /home/slimbook/.cache/debuginfod_client/e28b34cda5d75be8381557b633068f1b973e0685/debuginfo
+--42404--    object doesn't have a dynamic symbol table
+--42404-- Scheduler: using generic scheduler lock implementation.
+--42404-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==42404== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-42404-by-slimbook-on-slimbook
+==42404== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-42404-by-slimbook-on-slimbook
+==42404== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-42404-by-slimbook-on-slimbook
+==42404== 
+==42404== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==42404== don't want to do, unless you know exactly what you're doing,
+==42404== or are doing some strange experiment):
+==42404==   /usr/libexec/valgrind/../../bin/vgdb --pid=42404 ...command...
+==42404== 
+==42404== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==42404==   /path/to/gdb ./fft
+==42404== and then give GDB the following command
+==42404==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=42404
+==42404== --pid is optional if only one valgrind process is running
+==42404== 
+--42404-- REDIR: 0x4024a50 (ld-linux-x86-64.so.2:strlen) redirected to 0x580be0c2 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--42404-- REDIR: 0x4023200 (ld-linux-x86-64.so.2:index) redirected to 0x580be0dc (vgPlain_amd64_linux_REDIR_FOR_index)
+--42404-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--42404-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==42404== WARNING: new redirection conflicts with existing -- ignoring it
+--42404--     old: 0x04024a50 (strlen              ) R-> (0000.0) 0x580be0c2 vgPlain_amd64_linux_REDIR_FOR_strlen
+--42404--     new: 0x04024a50 (strlen              ) R-> (2007.0) 0x04849710 strlen
+--42404-- REDIR: 0x4023430 (ld-linux-x86-64.so.2:strcmp) redirected to 0x484a6f0 (strcmp)
+--42404-- REDIR: 0x4022650 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x484e1c0 (mempcpy)
+--42404-- Reading syms from /usr/lib64/libm.so.6
+==42404== Downloading debug info for /usr/lib64/libm.so.6...
+--42404--   Considering /home/slimbook/.cache/debuginfod_client/fd53990348f5eed735f9a8021f7a47063691353e/debuginfo ..
+--42404--   .. CRC is valid
+==42404== Successfully downloaded debug file for /usr/lib64/libm.so.6
+--42404-- Reading syms from /usr/lib64/libc.so.6
+==42404== Downloading debug info for /usr/lib64/libc.so.6...
+--42404--   Considering /home/slimbook/.cache/debuginfod_client/765237b0355c030ff41d969eedcb87bfccb43595/debuginfo ..
+--42404--   .. CRC is valid
+==42404== Successfully downloaded debug file for /usr/lib64/libc.so.6
+==42404== WARNING: new redirection conflicts with existing -- ignoring it
+--42404--     old: 0x049e7a10 (memalign            ) R-> (1011.0) 0x048489e4 memalign
+--42404--     new: 0x049e7a10 (memalign            ) R-> (1017.0) 0x048489b7 aligned_alloc
+==42404== WARNING: new redirection conflicts with existing -- ignoring it
+--42404--     old: 0x049e7a10 (memalign            ) R-> (1011.0) 0x048489e4 memalign
+--42404--     new: 0x049e7a10 (memalign            ) R-> (1017.0) 0x0484898a aligned_alloc
+==42404== WARNING: new redirection conflicts with existing -- ignoring it
+--42404--     old: 0x049e7a10 (memalign            ) R-> (1011.0) 0x048489e4 memalign
+--42404--     new: 0x049e7a10 (memalign            ) R-> (1017.0) 0x048489b7 aligned_alloc
+==42404== WARNING: new redirection conflicts with existing -- ignoring it
+--42404--     old: 0x049e7a10 (memalign            ) R-> (1011.0) 0x048489e4 memalign
+--42404--     new: 0x049e7a10 (memalign            ) R-> (1017.0) 0x0484898a aligned_alloc
+--42404-- REDIR: 0x4024bf0 (ld-linux-x86-64.so.2:strncmp) redirected to 0x4849f20 (strncmp)
+--42404-- REDIR: 0x49edb70 (libc.so.6:strnlen) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49edc00 (libc.so.6:strpbrk) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ebcb0 (libc.so.6:strcmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x4a00e30 (libc.so.6:wcsnlen) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eadd0 (libc.so.6:memset) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ff6b0 (libc.so.6:wcslen) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ea3c0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ff4c0 (libc.so.6:wcschr) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ebba0 (libc.so.6:index) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49edc30 (libc.so.6:rindex) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ff550 (libc.so.6:wcscmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eb020 (libc.so.6:stpncpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ffb00 (libc.so.6:wmemchr) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eda10 (libc.so.6:strncmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eb090 (libc.so.6:strcasecmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ecf20 (libc.so.6:strcspn) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ff5e0 (libc.so.6:wcscpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ebb20 (libc.so.6:strcat) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ed900 (libc.so.6:strncasecmp_l) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ea2c0 (libc.so.6:bcmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ead40 (libc.so.6:memrchr) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ebc20 (libc.so.6:strchrnul) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ecea0 (libc.so.6:strcpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eb130 (libc.so.6:strcasecmp_l) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ed7d0 (libc.so.6:strlen) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49edab0 (libc.so.6:strncpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eafa0 (libc.so.6:stpcpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eab00 (libc.so.6:memmove) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+==42404== Preferring higher priority redirection:
+--42404--     old: 0x04a9e840 (__memcpy_avx_unalign) R-> (2018.0) 0x0484b9f0 __memcpy_avx_unaligned_erms
+--42404--     new: 0x04a9e840 (__memcpy_avx_unalign) R-> (2018.1) 0x0484d2c0 memmove
+--42404-- REDIR: 0x49ea230 (libc.so.6:memchr) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eddf0 (libc.so.6:strspn) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eac20 (libc.so.6:mempcpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49ed860 (libc.so.6:strncasecmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x49eaed0 (libc.so.6:rawmemchr) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--42404-- REDIR: 0x4aa4930 (libc.so.6:__strrchr_avx2) redirected to 0x48490f0 (rindex)
+--42404-- REDIR: 0x4aa16f0 (libc.so.6:__strcmp_avx2) redirected to 0x484a5f0 (strcmp)
+--42404-- REDIR: 0x49e6d30 (libc.so.6:malloc) redirected to 0x48437f9 (malloc)
+--42404-- REDIR: 0x49e72d0 (libc.so.6:free) redirected to 0x4846072 (free)
+--42404-- REDIR: 0x4a9e840 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x484d2c0 (memmove)
+==42404== 
+==42404== HEAP SUMMARY:
+==42404==     in use at exit: 0 bytes in 0 blocks
+==42404==   total heap usage: 256 allocs, 256 frees, 18,432 bytes allocated
+==42404== 
+==42404== All heap blocks were freed -- no leaks are possible
+==42404== 
+==42404== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
